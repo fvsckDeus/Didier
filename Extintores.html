@@ -1,1 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EXTINBOGOTÁ FUTURA | Seguridad 2.0</title>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&display=swap" rel="stylesheet">
+
+<style>
+
+:root {
+--neon-red: #ff0000;
+--dark-red: #8b0000;
+--black: #050505;
+}
+
+/* FONDO MOLECULAS */
+
+.molecules{
+position:fixed;
+width:100%;
+height:100%;
+z-index:-2;
+}
+
+.molecules span{
+position:absolute;
+width:6px;
+height:6px;
+background:red;
+border-radius:50%;
+box-shadow:0 0 10px red;
+animation:float 20s linear infinite;
+opacity:.5;
+}
+
+.molecules span:nth-child(1){left:10%}
+.molecules span:nth-child(2){left:20%}
+.molecules span:nth-child(3){left:40%}
+.molecules span:nth-child(4){left:60%}
+.molecules span:nth-child(5){left:80%}
+
+@keyframes float{
+0%{transform:translateY(100vh)}
+100%{transform:translateY(-100px)}
+}
+
+/* HUMO */
+
+.smoke span{
+position:fixed;
+bottom:-200px;
+width:400px;
+height:400px;
+background:rgba(255,0,0,0.07);
+filter:blur(60px);
+border-radius:50%;
+animation:smoke 25s linear infinite;
+z-index:-1;
+}
+
+.smoke span:nth-child(1){left:10%}
+.smoke span:nth-child(2){left:50%;animation-delay:5s}
+.smoke span:nth-child(3){left:80%;animation-delay:10s}
+
+@keyframes smoke{
+0%{transform:translateY(0)}
+100%{transform:translateY(-1200px)}
+}
+
+body {
+background-color: var(--black);
+color: #fff;
+font-family: 'Orbitron', sans-serif;
+margin: 0;
+overflow-x: hidden;
+}
+
+/* NAV */
+
+nav {
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 5%;
+border-bottom:1px solid var(--dark-red);
+background:rgba(0,0,0,0.8);
+}
+
+.logo {
+font-size:1.5rem;
+font-weight:900;
+color:var(--neon-red);
+text-shadow:0 0 10px red;
+}
+
+.nav-links a {
+color:#ccc;
+text-decoration:none;
+margin-left:25px;
+transition:.3s;
+}
+
+.nav-links a:hover {
+color:var(--neon-red);
+}
+
+/* HERO */
+
+.hero {
+display:flex;
+align-items:center;
+justify-content:space-around;
+padding:100px 5%;
+flex-wrap:wrap;
+}
+
+.hero-image {
+animation:floatHero 4s ease-in-out infinite;
+}
+
+@keyframes floatHero {
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-20px)}
+}
+
+.hero-image img {
+width:350px;
+border-radius:20px;
+filter:drop-shadow(0 0 30px red);
+}
+
+.hero-text h1 {
+font-size:3rem;
+border-left:5px solid var(--neon-red);
+padding-left:20px;
+}
+
+/* BOTON */
+
+.btn-cyber {
+background:transparent;
+color:white;
+border:2px solid var(--neon-red);
+padding:15px 40px;
+cursor:pointer;
+transition:.4s;
+}
+
+.btn-cyber:hover {
+background:var(--neon-red);
+box-shadow:0 0 30px red;
+}
+
+/* SERVICIOS */
+
+.services {
+display:flex;
+justify-content:center;
+gap:40px;
+padding:50px 0;
+flex-wrap:wrap;
+}
+
+.hex-card {
+width:250px;
+padding:40px 20px;
+background:#111;
+text-align:center;
+clip-path:polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%);
+border:1px solid var(--dark-red);
+transition:.3s;
+}
+
+.hex-card:hover {
+border-color:red;
+transform:scale(1.05);
+box-shadow:0 0 25px red;
+}
+
+.hex-card i {
+font-size:2rem;
+color:red;
+}
+
+/* CONTACTO */
+
+.contact-hud {
+margin:50px 5%;
+padding:30px;
+border:1px solid var(--dark-red);
+background:#111;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-radius:0 50px 0 50px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="molecules">
+<span></span><span></span><span></span>
+<span></span><span></span>
+</div>
+
+<div class="smoke">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+<nav>
+<div class="logo">
+<i class="fas fa-fire-extinguisher"></i>
+EXTINBOGOTÁ FUTURA
+</div>
+
+<div class="nav-links">
+<a href="#">Home</a>
+<a href="#">Servicios</a>
+<a href="#">Mantenimiento</a>
+<a href="#">Contacto</a>
+</div>
+</nav>
+
+<section class="hero">
+
+<div class="hero-image">
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Fire_extinguisher.jpg">
+</div>
+
+<div class="hero-text">
+<h1>SEGURIDAD CONTRA INCENDIOS<br>
+<span style="color:red;">DEL FUTURO - BOGOTÁ</span></h1>
+
+<p>Recarga, mantenimiento y venta de extintores certificados.</p>
+
+<button class="btn-cyber">
+¡RECARGA URGENTE AHORA!
+</button>
+
+</div>
+</section>
+
+<section class="services">
+
+<div class="hex-card">
+<i class="fas fa-fire"></i>
+<h3>Recarga</h3>
+<p>Servicio profesional certificado</p>
+</div>
+
+<div class="hex-card">
+<i class="fas fa-tools"></i>
+<h3>Mantenimiento</h3>
+<p>Inspección técnica completa</p>
+</div>
+
+<div class="hex-card">
+<i class="fas fa-truck"></i>
+<h3>Domicilio</h3>
+<p>Servicio rápido en Bogotá</p>
+</div>
+
+</section>
+
+<div class="contact-hud">
+<div>
+<h3>CONTACTO</h3>
+<p>Bogotá Colombia</p>
+<p>+57 300 000 0000</p>
+</div>
+</div>
+
+</body>
+</html>
 
